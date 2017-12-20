@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grapher example</title>
+	<script type="text/javascript" src="/lib/vis.js"></script>
+	<script type="text/javascript" src="/lib/vis.css"></script>
+	<script type="text/javascript" src="/lib/grapher.js"></script>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	// Init
+	var g = new Grapher();
+
+	// Coloring on click is automatic
+	g.auto();
+
+	// Node types
+	g.type('node', {name: 'Person', color: '#FF4545'});
+
+	// Edge types
+	g.type('edge', {name: 'Knows', color: '#45FF45'});
+	g.type('edge', {name: 'Loves', color: '#FF4545'});
+	g.type('edge', {name: 'Hates', color: '#5AB1BB'});
+	g.type('edge', {name: 'Fancy', color: '#C5EDAC'});
+	
+	// Create graph
+	g.update({nodes:[], edges:[]});
+
+	// Listen for new data
+	g.connect('localhost', { port: 1234});
+
+</script>
+</html>
